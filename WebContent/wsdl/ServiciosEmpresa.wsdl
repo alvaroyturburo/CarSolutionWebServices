@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices.upse.edu.ec" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices.upse.edu.ec" xmlns:intf="http://webservices.upse.edu.ec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservices.upse.edu.ec" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="empresa_por_nombreEmpresa">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="empresa_por_nombreEmpresaResponse">
+    <complexType>
+     <sequence>
+      <element name="empresa_por_nombreEmpresaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="empresa_por_idempresa">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="empresa_por_idempresaResponse">
+    <complexType>
+     <sequence>
+      <element name="empresa_por_idempresaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="listaEmpresasTipo">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="listaEmpresasTipoResponse">
+    <complexType>
+     <sequence>
+      <element name="listaEmpresasTipoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="listaEmpresa_sin_parametros">
+    <complexType/>
+   </element>
+   <element name="listaEmpresa_sin_parametrosResponse">
+    <complexType>
+     <sequence>
+      <element name="listaEmpresa_sin_parametrosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="empresa_por_nombreEmpresaRequest">
+
+      <wsdl:part element="impl:empresa_por_nombreEmpresa" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listaEmpresasTipoRequest">
+
+      <wsdl:part element="impl:listaEmpresasTipo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listaEmpresasTipoResponse">
+
+      <wsdl:part element="impl:listaEmpresasTipoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listaEmpresa_sin_parametrosRequest">
+
+      <wsdl:part element="impl:listaEmpresa_sin_parametros" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="empresa_por_idempresaRequest">
+
+      <wsdl:part element="impl:empresa_por_idempresa" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="empresa_por_idempresaResponse">
+
+      <wsdl:part element="impl:empresa_por_idempresaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="empresa_por_nombreEmpresaResponse">
+
+      <wsdl:part element="impl:empresa_por_nombreEmpresaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listaEmpresa_sin_parametrosResponse">
+
+      <wsdl:part element="impl:listaEmpresa_sin_parametrosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServiciosEmpresa">
+
+      <wsdl:operation name="empresa_por_nombreEmpresa">
+
+         <wsdl:input message="impl:empresa_por_nombreEmpresaRequest" name="empresa_por_nombreEmpresaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:empresa_por_nombreEmpresaResponse" name="empresa_por_nombreEmpresaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="empresa_por_idempresa">
+
+         <wsdl:input message="impl:empresa_por_idempresaRequest" name="empresa_por_idempresaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:empresa_por_idempresaResponse" name="empresa_por_idempresaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listaEmpresasTipo">
+
+         <wsdl:input message="impl:listaEmpresasTipoRequest" name="listaEmpresasTipoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listaEmpresasTipoResponse" name="listaEmpresasTipoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listaEmpresa_sin_parametros">
+
+         <wsdl:input message="impl:listaEmpresa_sin_parametrosRequest" name="listaEmpresa_sin_parametrosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listaEmpresa_sin_parametrosResponse" name="listaEmpresa_sin_parametrosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiciosEmpresaSoapBinding" type="impl:ServiciosEmpresa">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="empresa_por_nombreEmpresa">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="empresa_por_nombreEmpresaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="empresa_por_nombreEmpresaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="empresa_por_idempresa">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="empresa_por_idempresaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="empresa_por_idempresaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listaEmpresasTipo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listaEmpresasTipoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listaEmpresasTipoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listaEmpresa_sin_parametros">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listaEmpresa_sin_parametrosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listaEmpresa_sin_parametrosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiciosEmpresaService">
+
+      <wsdl:port binding="impl:ServiciosEmpresaSoapBinding" name="ServiciosEmpresa">
+
+         <wsdlsoap:address location="http://localhost:8080/ServicesEmpresa/services/ServiciosEmpresa"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

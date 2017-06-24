@@ -1,0 +1,37 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServiciosEmpresaService WSDL service -->
+
+  <service name="ServiciosEmpresa" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservices.upse.edu.ec"/>
+      <parameter name="wsdlServiceElement" value="ServiciosEmpresaService"/>
+      <parameter name="schemaQualified" value="http://webservices.upse.edu.ec"/>
+      <parameter name="wsdlServicePort" value="ServiciosEmpresa"/>
+      <parameter name="className" value="ec.edu.upse.webservices.ServiciosEmpresaSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ServiciosEmpresa"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="empresa_por_nombreEmpresa" qname="operNS:empresa_por_nombreEmpresa" xmlns:operNS="http://webservices.upse.edu.ec" returnQName="retNS:empresa_por_nombreEmpresaReturn" xmlns:retNS="http://webservices.upse.edu.ec" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:request" xmlns:pns="http://webservices.upse.edu.ec" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="empresa_por_idempresa" qname="operNS:empresa_por_idempresa" xmlns:operNS="http://webservices.upse.edu.ec" returnQName="retNS:empresa_por_idempresaReturn" xmlns:retNS="http://webservices.upse.edu.ec" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:request" xmlns:pns="http://webservices.upse.edu.ec" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="listaEmpresasTipo" qname="operNS:listaEmpresasTipo" xmlns:operNS="http://webservices.upse.edu.ec" returnQName="retNS:listaEmpresasTipoReturn" xmlns:retNS="http://webservices.upse.edu.ec" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:request" xmlns:pns="http://webservices.upse.edu.ec" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="listaEmpresa_sin_parametros" qname="operNS:listaEmpresa_sin_parametros" xmlns:operNS="http://webservices.upse.edu.ec" returnQName="retNS:listaEmpresa_sin_parametrosReturn" xmlns:retNS="http://webservices.upse.edu.ec" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="listaEmpresa_sin_parametros empresa_por_idempresa listaEmpresasTipo empresa_por_nombreEmpresa"/>
+
+  </service>
+</deployment>
